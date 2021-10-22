@@ -14,7 +14,19 @@ void GameObject::AddComponent(Monobehavior* newComponent)
 	m_components.push_back(newComponent);
 }
 
-void GameObject::Loop()
+void GameObject::Start()
+{
+}
+
+void GameObject::Update()
+{
+
+}
+std::string GameObject::GetName() {
+	return m_name;
+}
+
+void GameObject::MainLoop()
 {
 	//awake
 

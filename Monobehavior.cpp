@@ -33,6 +33,8 @@ void Monobehavior::FixedUpdate()
 
 void Monobehavior::MainLoop()
 {
+
+	//todo: 시간을 재는 기능은 scene에 있어야 될 것 같음. 지금은 컴포넌트 갯수만큼 여러번 호출
 	time->StartTimer();
 
 	//Update 함수 호출
