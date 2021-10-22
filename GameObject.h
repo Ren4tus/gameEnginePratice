@@ -10,9 +10,7 @@ public:
 		m_tempIsGameEnd = false;
 	}
 
-	~GameObject()
-	{
-	}
+	~GameObject();
 
 	void AddComponent(Monobehavior* newComponent);
 	void Loop();
