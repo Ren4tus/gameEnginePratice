@@ -3,7 +3,7 @@
 #include <string>
 #include "Component.h"
 #include "Monobehavior.h"
-class GameObject : public Monobehavior
+class GameObject
 {
 public:
 	GameObject()
@@ -18,12 +18,11 @@ public:
 	~GameObject();
 
 	void AddComponent(Monobehavior* newComponent);
-	void Start() override;
-	void Update() override;
-	void MainLoop() override;
-	std::string GetName() override;
+	void AddChild(GameObject* childGameobject);
+	void Loop();
 private:
 	std::vector<Monobehavior*> m_components;
+	std::vector<GameObject*> m_childGameobjects;
 
 	//그냥 while문 돌리기 위한 임시 변수
 	bool m_tempIsGameEnd;

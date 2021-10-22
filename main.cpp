@@ -7,8 +7,8 @@ int main()
 	GameObject* obj1 = new GameObject("obj1");
 	obj1->AddComponent(new MyComponent());
 	obj1->AddComponent(new MyComponent2());
-	parentObject->AddComponent(obj1);
-	parentObject->MainLoop();
+	parentObject->AddChild(obj1);
+	parentObject->Loop();
 
 	delete obj1;
 	delete parentObject;
