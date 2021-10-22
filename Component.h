@@ -5,7 +5,6 @@
 class IComponent
 {
 public:
-	//test
 	IComponent(){}
 	virtual ~IComponent(){}
 	virtual std::string GetName() = 0;
