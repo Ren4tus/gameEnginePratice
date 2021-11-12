@@ -28,5 +28,6 @@ void MyComponent2::Update()
 
 void MyComponent2::FixedUpdate()
 {
-	std::cout << m_name << " - FixedUpdate 호출!" << std::endl;
+	//보기 불편해서 주석
+	//std::cout << m_name << " - FixedUpdate 호출!" << std::endl;
 }

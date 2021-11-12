@@ -1,30 +1,33 @@
 #pragma once
 #include <vector>
 #include <string>
+#include <stack>
+#include "Vector3.h"
 #include "Component.h"
 #include "Monobehavior.h"
+class Transform;
 class GameObject
 {
 public:
-	GameObject()
-	{
-		m_tempIsGameEnd = false;
-	}
-	GameObject(std::string name)
-	{
-		m_tempIsGameEnd = false;
-		m_name = name;
-	}
+	GameObject();
+	GameObject(std::string name);
 	~GameObject();
 
 	void AddComponent(Monobehavior* newComponent);
 	void AddChild(GameObject* childGameobject);
-	void Loop();
+	void SetPosition(double x, double y, double z);
+	void AddPosition(Vector3 vec3);
+	void SetScale(double x, double y, double z);
+	Transform* GetTransform();
+	void FixedUpdate();
+	void Update();
+	void Start();
+	void DebugNowPosition();
 private:
 	std::vector<Monobehavior*> m_components;
 	std::vector<GameObject*> m_childGameobjects;
-
-	//그냥 while문 돌리기 위한 임시 변수
-	bool m_tempIsGameEnd;
+	Vector3 m_reservationPosition;
+	std::stack<Vector3*> m_reservationScale;
 	std::string m_name;
 };
+

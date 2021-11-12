@@ -5,10 +5,7 @@ class Time;
 
 class Monobehavior : public IComponent {
 private:
-	Time* time;
-	const unsigned short FIXED_EXECUTE_TIME = 2;
-	const float UPDATE_EXECUTE_TIME = 3.0f;
-	unsigned short m_fixedUpdateCounter;
+
 public:
 	Monobehavior();
 	~Monobehavior();
@@ -17,8 +14,6 @@ public:
 	void Start() override;
 	void Update() override;
 	void FixedUpdate() override;
-	virtual void MainLoop();
 	void Init();
-	Time* GetTime();
 
 };
